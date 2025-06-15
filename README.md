@@ -32,7 +32,7 @@ $ source .mechanum-robot/bin/activate
 
 Install dependencies:
 ```bash
-$ pip install -r requirements.txt`
+$ pip install -r requirements.txt
 ```
 
 Ensure that I2C is enabled:
@@ -43,7 +43,7 @@ sudo raspi-config # turn on I2C
 ## Usage
 To test basic control of a single motor:
 ```bash
-python3 motor_test.py`
+python3 motor_test.py
 ```
 
 To run a mechanum wheel test pattern:
@@ -60,16 +60,24 @@ To view webcam:
 python3 stream.py3 & # then go to [robot IP address:8000] to view the webcam
 ```
 
+## Raspberry Pi Development Connection
+
+For Pi Zeros, you can connect locally via Ethernet-over-USB-C. For non-zero Pis, directly connecting via Ethernet cable and then sshing in at `[username]@raspberrypi.local` is the easiest approach I've found. It's possible to then connect via SSH in e.g. Cursor, VS Code, etc. for development.
 
 ## Bugs/Todos
 Webcam doesn't seem to work with picamera and a 64 bit OS. Perhaps with picamera2 or some other library.
 
 Keyboard control can be made to work, but the `keyboard` library must be run as root, with the dependencies installed within the root account. Looking at alternatives, or perhaps leapfrogging directly to xbox controller control.
 
-
-
 `/audio/*.wav` files are for testing audio playback
 
+[ ] Bluetooth Controller steering
+  [ ] Bluetooth controller pairing with Pi
+  [ ] Library and code to output debug bluetooth analog stick position within a control loop.
+  [ ] Map one stick to quantized translation forward/back/strafe-left/strafe-right.
+  [ ] Map second stick (or shoulder buttons?) to rotation.
+  [ ] Make translation stick accept and drive holonomically (i.e. directions between forward and strafe left).
 
+[ ] There is a .mechanum-robot venv dir in the local development environment (not in git) which should be verified redundant and deleted.
 
-
+[ ] We should create an init.sh or .py script which creates the virtualenv, installs the deps, and installs I2C if raspi-config allows a non-interactive way to do so. 
