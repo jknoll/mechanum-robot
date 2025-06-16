@@ -2,3 +2,4 @@ adafruit-circuitpython-motorkit
 picamera
 keyboard
 RPi.GPIO
+evdev

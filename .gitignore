@@ -1,6 +1,9 @@
 # Virtualenv
 .mechanum-robot/
 
+# Xbox Dependency
+xpadneo
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

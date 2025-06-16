@@ -24,6 +24,7 @@ def drive(command, kit):
   kit.motor3.throttle = command[2]
   kit.motor4.throttle = command[3]
 
+'''
 import keyboard  # using module keyboard
 while True:  # making a loop
     try:  # used try so that if user pressed other than the given key error will not be shown
@@ -45,7 +46,8 @@ while True:  # making a loop
     except Exception as e:
         print(e.message, e.args)	
         break
-
+'''
+'''
 duration = 1
 drive(forward, kit)
 sleep(duration)
@@ -68,3 +70,4 @@ sleep(duration)
 drive(spinclockwise, kit)
 sleep(duration)
 drive(stop, kit)
+'''
