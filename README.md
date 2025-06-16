@@ -65,6 +65,7 @@ python3 stream.py3 & # then go to [robot IP address:8000] to view the webcam
 For Pi Zeros, you can connect locally via Ethernet-over-USB-C. For non-zero Pis, directly connecting via Ethernet cable and then sshing in at `[username]@raspberrypi.local` is the easiest approach I've found. It's possible to then connect via SSH in e.g. Cursor, VS Code, etc. for development.
 
 ## Bluetooth Controller Pairing
+See detailed description in ['docs/xbox_controller_setup.md'](xbox_controller_setup.md)
 ```bash
 sudo bluetoothctl
 ```
