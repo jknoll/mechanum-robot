@@ -17,6 +17,8 @@ Control system for simple mechanum-wheeled holonomic drive Raspberry Pi based ro
 ## Setup
 Build the robot. Ensure that the Mechanum wheels are assigned to the four corners of the chassis such that the subwheels form an "x".
 
+Also ensure that the motors are wired 1-4 onto the motor control bonnet clockwise in order as the robot is viewed from above. Motor 1 and 4 will then be on the 
+
 Clone this repo:
 
 ``` bash
@@ -82,6 +84,26 @@ agent on
 default-agent
 scan on
 ```
+
+## Startup systemd support
+Call the bootstrap.sh script via systemd to enter the control loop. Example config:
+```bash
+[Unit]
+Description=Run mechanum-robot bootstrap script at boot
+After=bluetooth.target
+Requires=bluetooth.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/justinknoll/Documents/git/mechanum-robot
+ExecStartPre=/bin/bash -c 'until [ -e /dev/input/event4 ]; do sleep 1; done'
+ExecStart=/home/justinknoll/Documents/git/mechanum-robot/bootstrap.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+``` 
 
 ## Bugs/Todos
 Webcam doesn't seem to work with picamera and a 64 bit OS. Perhaps with picamera2 or some other library.

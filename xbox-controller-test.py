@@ -8,12 +8,14 @@ kit = MotorKit()
 speed = 0.7  # Moderate throttle value
 
 # Motor mapping: adjust as needed for your wiring
+# N.B. this isn't in sync with the wiring, but forward/backward and strafe left/right are working. m4 is fl, m3 is bl.
+# TODO: fix this.
+# 
 # motor1 = front-left
 # motor2 = front-right
 # motor3 = back-left
 # motor4 = back-right
 
-# Original mapping
 motors = [kit.motor1, kit.motor2, kit.motor3, kit.motor4]
 
 def find_controller(name="Xbox Wireless Controller"):
@@ -35,7 +37,7 @@ def move(forward=0, strafe=0):
     """
     fl = forward + strafe
     fr = forward - strafe
-    bl = -1 * forward - strafe # Left hand motors need to have forward inverted to match right hand motors
+    bl = -1 * forward - strafe # Left hand motors need to have forward inverted to match right hand motors; they are actually fl and bl, but see comment above in motors=[]
     br = -1 * forward + strafe
 
     # Normalize so no value exceeds abs(1.0)
