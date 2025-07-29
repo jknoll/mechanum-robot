@@ -12,6 +12,8 @@ speed = 0.7  # Moderate throttle value
 # motor2 = front-right
 # motor3 = back-left
 # motor4 = back-right
+
+# Original mapping
 motors = [kit.motor1, kit.motor2, kit.motor3, kit.motor4]
 
 def find_controller(name="Xbox Wireless Controller"):
@@ -33,8 +35,8 @@ def move(forward=0, strafe=0):
     """
     fl = forward + strafe
     fr = forward - strafe
-    bl = -1 * forward - strafe #is back left mounted upside down or something?
-    br = forward + strafe
+    bl = -1 * forward - strafe # Left hand motors need to have forward inverted to match right hand motors
+    br = -1 * forward + strafe
 
     # Normalize so no value exceeds abs(1.0)
     max_val = max(abs(fl), abs(fr), abs(bl), abs(br), 1)
