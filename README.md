@@ -55,9 +55,14 @@ To kill motors mid-action (be ready with this command on early runs):
 python3 kill.py3
 ```
 
-To view webcam:
+To view webcam (not currently working):
 ```bash
 python3 stream.py3 & # then go to [robot IP address:8000] to view the webcam
+```
+
+To drive via XBox bluetooth controller (after following the Bluetooth setup instructions below):
+```bash
+python3 xbox-controller-test.py
 ```
 
 ## Raspberry Pi Development Connection
@@ -84,16 +89,14 @@ Keyboard control can be made to work, but the `keyboard` library must be run as 
 
 `/audio/*.wav` files are for testing audio playback
 
+### Bluetooth Controller
 [x] Bluetooth Controller steering
-  [x] Bluetooth controller pairing with Pi
-  [x] Library and code to output debug bluetooth analog stick position within a control loop.
-  [x] Map dpad to quantized translation forward/back/strafe-left/strafe-right.
-  [ ] Map second stick (or shoulder buttons?) to rotation.
-  [ ] Make translation stick accept and drive holonomically (i.e. directions between forward and strafe left).
+[x] Bluetooth controller pairing with Pi
+[x] Library and code to output debug bluetooth analog stick position within a control loop.
+[x] Map dpad to quantized translation forward/back/strafe-left/strafe-right.
+[ ] Map second stick (or shoulder buttons?) to rotation.
+[ ] Make translation stick accept and drive holonomically (i.e. directions between forward and strafe left).
 
-[x] There is a .mechanum-robot venv dir in the local development environment (not in git) which should be verified redundant and deleted.
-[x] Delete legacy code from pi. Repo is the only truth.
-
-[ ] Back left motor seems to be mounted upside down (or more likely reverse polarity!), hence 
-
-[ ] We should create an init.sh or .py script which creates the virtualenv, installs the deps, and installs I2C if raspi-config allows a non-interactive way to do so. 
+### Initialization of Project and Robot
+[ ] Create an init.sh or .py script which creates the virtualenv, installs the deps, and installs I2C if raspi-config allows a non-interactive way to do so. 
+[ ] Create startup script to put the robot into a default running state so that SSH isn't necessary to start interacting.
