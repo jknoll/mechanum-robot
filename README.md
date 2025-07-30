@@ -17,7 +17,7 @@ Control system for simple mechanum-wheeled holonomic drive Raspberry Pi based ro
 ## Setup
 Build the robot. Ensure that the Mechanum wheels are assigned to the four corners of the chassis such that the subwheels form an "x".
 
-Also ensure that the motors are wired 1-4 onto the motor control bonnet clockwise in order as the robot is viewed from above. Motor 1 and 4 will then be on the 
+Also ensure that the motors are wired 1-4 onto the motor control bonnet clockwise in order as the robot is viewed from above. Motor 1 and 4 will then be on the front right and front left.
 
 Clone this repo:
 
@@ -110,6 +110,15 @@ To stop the systemd managed process in order to do manual dev after boot, but wi
 sudo systemctl stop bootstrap.service
 ```
 
+## Audio
+```bash
+aplay audio/2860.wav
+```
+
+```bash
+fflplay audio/
+```
+
 ## Bugs/Todos
 Webcam doesn't seem to work with picamera and a 64 bit OS. Perhaps with picamera2 or some other library.
 
@@ -128,3 +137,4 @@ Keyboard control can be made to work, but the `keyboard` library must be run as 
 ### Initialization of Project and Robot
 [ ] Create an init.sh or .py script which creates the virtualenv, installs the deps, and installs I2C if raspi-config allows a non-interactive way to do so. 
 [ ] Create startup script to put the robot into a default running state so that SSH isn't necessary to start interacting.
+
