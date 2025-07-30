@@ -50,28 +50,55 @@ def move(forward=0, strafe=0):
     kit.motor2.throttle = fr   # front-right
     kit.motor3.throttle = bl   # back-left
     kit.motor4.throttle = br   # back-right
+
     print(fl, fr, bl, br)
+
+
+def move_rotate(rotate):
+    if rotate == 'l':
+      kit.motor1.throttle = 0.7   # front-left
+      kit.motor2.throttle = 0.7   # front-right
+      kit.motor3.throttle = 0.7   # back-left
+      kit.motor4.throttle = 0.7   # back-right
+    elif rotate == 'r':
+      kit.motor1.throttle = -0.7   # front-left
+      kit.motor2.throttle = -0.7   # front-right
+      kit.motor3.throttle = -0.7   # back-left
+      kit.motor4.throttle = -0.7   # back-right
 
 def main():
     dev = find_controller()
     print(f"Connected to: {dev.name} ({dev.path})")
 
     x, y = 0, 0  # D-pad state
+    rotate_value = 0
 
     for event in dev.read_loop():
         if event.type == ecodes.EV_ABS:
             absevent = categorize(event)
+            print(categorize(event))
             if absevent.event.code == ecodes.ABS_HAT0X:
                 x = absevent.event.value
             elif absevent.event.code == ecodes.ABS_HAT0Y:
                 y = absevent.event.value
+            elif absevent.event.code == ecodes.ABS_RZ:
+                rotate = 'r'
+                rotate_value = absevent.event.value
+                print(rotate_value)
+            elif absevent.event.code == ecodes.ABS_Z:
+                rotate = 'l'
+                rotate_value = absevent.event.value
 
             if (x, y) == (0, 0):
                 stop()
             else:
                 move(forward=-y, strafe=x)  # Y is inverted
-                
 
+            if (x, y) == (0, 0) and rotate_value == 0:
+                stop()
+            else:
+                move_rotate(rotate)
+                
 if __name__ == "__main__":
     try:
         main()
