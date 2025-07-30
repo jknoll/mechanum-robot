@@ -35,10 +35,12 @@ def move(forward=0, strafe=0):
     `forward`: +1 = forward, -1 = backward
     `strafe`: +1 = right, -1 = left
     """
-    fl = forward + strafe
-    fr = forward - strafe
-    bl = -1 * forward - strafe # Left hand motors need to have forward inverted to match right hand motors; they are actually fl and bl, but see comment above in motors=[]
-    br = -1 * forward + strafe
+
+    # Strafe also needs to be inverted (+ and - switched), perhaps also due to motor order being different.
+    fl = forward - strafe
+    fr = forward + strafe
+    bl = -1 * forward + strafe # Left hand motors need to have forward inverted to match right hand motors; they are actually fl and bl, but see comment above in motors=[]
+    br = -1 * forward - strafe
 
     # Normalize so no value exceeds abs(1.0)
     max_val = max(abs(fl), abs(fr), abs(bl), abs(br), 1)

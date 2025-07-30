@@ -105,6 +105,11 @@ WantedBy=multi-user.target
 
 ``` 
 
+To stop the systemd managed process in order to do manual dev after boot, but without interfering with the reboot start up process, use:
+```bash
+sudo systemctl stop bootstrap.service
+```
+
 ## Bugs/Todos
 Webcam doesn't seem to work with picamera and a 64 bit OS. Perhaps with picamera2 or some other library.
 
