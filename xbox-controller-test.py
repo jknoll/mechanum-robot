@@ -5,7 +5,7 @@ import time
 
 # Initialize motor controller
 kit = MotorKit()
-speed = 0.7  # Moderate throttle value
+speed = 1.0  # Moderate throttle value
 
 # Motor mapping: adjust as needed for your wiring
 # N.B. this isn't in sync with the wiring, but forward/backward and strafe left/right are working. m4 is fl, m3 is bl.
@@ -38,7 +38,7 @@ def move(forward=0, strafe=0):
     """
 
     # Strafe also needs to be inverted (+ and - switched), perhaps also due to motor order being different.
-    fl = forward - strafe
+    fl = -1 * forward + strafe
     fr = forward + strafe
     bl = -1 * forward + strafe # Left hand motors need to have forward inverted to match right hand motors; they are actually fl and bl, but see comment above in motors=[]
     br = -1 * forward - strafe
@@ -58,15 +58,15 @@ def move(forward=0, strafe=0):
 
 def move_rotate(rotate):
     if rotate == 'l':
-      kit.motor1.throttle = 0.9   # front-left
-      kit.motor2.throttle = 0.9   # front-right
-      kit.motor3.throttle = 0.9   # back-left
-      kit.motor4.throttle = 0.9   # back-right
+      kit.motor1.throttle = -speed   # front-left
+      kit.motor2.throttle = speed   # front-right
+      kit.motor3.throttle = speed   # back-left
+      kit.motor4.throttle = speed   # back-right
     elif rotate == 'r':
-      kit.motor1.throttle = -0.9   # front-left
-      kit.motor2.throttle = -0.9   # front-right
-      kit.motor3.throttle = -0.9   # back-left
-      kit.motor4.throttle = -0.9   # back-right
+      kit.motor1.throttle = speed   # front-left
+      kit.motor2.throttle = -speed   # front-right
+      kit.motor3.throttle = -speed   # back-left
+      kit.motor4.throttle = -speed   # back-right
     print("move_rotate")
 
 def main():
@@ -92,7 +92,7 @@ def main():
                 rotate = 'l'
                 rotate_value = absevent.event.value
 
-            if (x, y) == (0, 0) and rotate_value == 0:
+            if (x, y) == (0, 0) and rotate_value < 20:
                 stop()
             
             if (x, y) != (0, 0):
