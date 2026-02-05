@@ -1,5 +1,5 @@
-# mechanum-robot
-Control system for simple mechanum-wheeled holonomic drive Raspberry Pi based robot.
+# mecanum-robot
+Control system for simple mecanum-wheeled holonomic drive Raspberry Pi based robot.
 
 ## Parts List
 - Raspberry Pi 4B
@@ -15,7 +15,7 @@ Control system for simple mechanum-wheeled holonomic drive Raspberry Pi based ro
 
 
 ## Setup
-Build the robot. Ensure that the Mechanum wheels are assigned to the four corners of the chassis such that the subwheels form an "x".
+Build the robot. Ensure that the Mecanum wheels are assigned to the four corners of the chassis such that the subwheels form an "x".
 
 Also ensure that the motors are wired 1-4 onto the motor control bonnet clockwise in order as the robot is viewed from above. Motor 1 and 4 will then be on the front right and front left.
 
@@ -28,8 +28,8 @@ git clone git@github.com:jknoll/mechanum-robot.git
 Create a virtualenv and activate it:
 
 ```bash
-$ python -m venv .mechanum-robot
-$ source .mechanum-robot/bin/activate
+$ python -m venv .mecanum-robot
+$ source .mecanum-robot/bin/activate
 ```
 
 Install dependencies:
@@ -48,7 +48,7 @@ To test basic control of a single motor:
 python3 motor_test.py
 ```
 
-To run a mechanum wheel test pattern:
+To run a mecanum wheel test pattern:
 ```bash
 python3 robot_keyboardless.py
 ```
@@ -89,15 +89,15 @@ scan on
 Call the bootstrap.sh script via systemd to enter the control loop. Example config:
 ```bash
 [Unit]
-Description=Run mechanum-robot bootstrap script at boot
+Description=Run mecanum-robot bootstrap script at boot
 After=bluetooth.target
 Requires=bluetooth.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/justinknoll/Documents/git/mechanum-robot
+WorkingDirectory=/home/justinknoll/Documents/git/mecanum-robot
 ExecStartPre=/bin/bash -c 'until [ -e /dev/input/event4 ]; do sleep 1; done'
-ExecStart=/home/justinknoll/Documents/git/mechanum-robot/bootstrap.sh
+ExecStart=/home/justinknoll/Documents/git/mecanum-robot/bootstrap.sh
 Restart=on-failure
 
 [Install]
