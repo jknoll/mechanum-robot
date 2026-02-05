@@ -1,13 +1,18 @@
 # TODO
 
-## Documentation & Media (requires user input)
+## Documentation & Media
 
-- [ ] Add a well-lit, well-positioned photo of the current robot to the repo and README
-  - **Requires user:** Provide the image file
-- [ ] Add .stl files for the 3D-printed parts (motor housings, Raspberry Pi case) to the repo
-  - **Requires user:** Provide .stl files or links to them
-- [ ] Add attribution and links to the Thingiverse-hosted models used for the motor housings and the Raspberry Pi case
-  - **Requires user:** Provide the Thingiverse URLs for the models used
+- [x] Add a photo of the robot to the repo and README
+  - Added placeholder photo (`docs/mecanum-robot.jpg`); replace with a better well-lit shot when available
+- [ ] Add a better well-lit, well-positioned photo of the robot
+  - **Requires user:** Take and provide a new image
+- [ ] Download and add .stl files to the `stl/` directory
+  - **Requires user:** Download from Thingiverse (requires login) and place in `stl/`:
+    - [Raspberry Pi Camera to Lego Technic Adaptor](https://www.thingiverse.com/thing:4409881/files) by ralphius
+    - [Raspberry Pi 4 LEGO Technic Enclosure](https://www.thingiverse.com/thing:3713324/files) by paulirotta
+    - [Lego Wrapper for TT Motor](https://www.thingiverse.com/thing:5272973/files) by Nick507
+- [x] Add attribution and links to the Thingiverse-hosted models
+  - Added to README.md and `stl/ATTRIBUTION.md`
 - [ ] Add a video demonstrating the robot in action
   - **Requires user:** Record and provide the video file or hosting link
 

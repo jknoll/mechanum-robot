@@ -1,6 +1,8 @@
 # mecanum-robot
 Control system for simple mecanum-wheeled holonomic drive Raspberry Pi based robot.
 
+<img src="docs/mecanum-robot.jpg" alt="Mecanum-wheeled robot with Lego Technic chassis and Raspberry Pi" width="400">
+
 ## Parts List
 - Raspberry Pi 4B
 - Mini SD Card
@@ -13,6 +15,15 @@ Control system for simple mecanum-wheeled holonomic drive Raspberry Pi based rob
 - Raspberry Pi Camera
 - Assorted legos for chassis
 
+## 3D Printed Parts
+
+STL files are in the [`stl/`](stl/) directory. These are sourced from Thingiverse — credit and thanks to the original creators:
+
+| Part | Creator | Thingiverse Link |
+|------|---------|-----------------|
+| Raspberry Pi Camera to Lego Technic Adaptor | ralphius | [Thing:4409881](https://www.thingiverse.com/thing:4409881) |
+| Raspberry Pi 4 LEGO Technic Enclosure | paulirotta | [Thing:3713324](https://www.thingiverse.com/thing:3713324) |
+| Lego Wrapper for TT Motor | Nick507 | [Thing:5272973](https://www.thingiverse.com/thing:5272973) |
 
 ## Setup
 Build the robot. Ensure that the Mecanum wheels are assigned to the four corners of the chassis such that the subwheels form an "x".

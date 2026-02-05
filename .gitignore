@@ -1,3 +1,6 @@
+# Large image originals
+*.heic
+
 # Virtualenv
 .mecanum-robot/
 
