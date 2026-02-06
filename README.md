@@ -19,11 +19,11 @@ Control system for simple mecanum-wheeled holonomic drive Raspberry Pi based rob
 
 STL files are in the [`stl/`](stl/) directory. These are sourced from Thingiverse — credit and thanks to the original creators:
 
-| Part | Creator | Thingiverse Link |
-|------|---------|-----------------|
-| Raspberry Pi Camera to Lego Technic Adaptor | ralphius | [Thing:4409881](https://www.thingiverse.com/thing:4409881) |
-| Raspberry Pi 4 LEGO Technic Enclosure | paulirotta | [Thing:3713324](https://www.thingiverse.com/thing:3713324) |
-| Lego Wrapper for TT Motor | Nick507 | [Thing:5272973](https://www.thingiverse.com/thing:5272973) |
+| Part | Creator | License | Thingiverse Link |
+|------|---------|---------|-----------------|
+| Raspberry Pi Camera to Lego Technic Adaptor | ralphius | CC BY | [Thing:4409881](https://www.thingiverse.com/thing:4409881) |
+| Raspberry Pi 4 LEGO Technic Enclosure | paulirotta | CC BY-NC-SA | [Thing:3713324](https://www.thingiverse.com/thing:3713324) |
+| Lego Wrapper for TT Motor | Nick507 | CC BY-SA | [Thing:5272973](https://www.thingiverse.com/thing:5272973) |
 
 ## Setup
 Build the robot. Ensure that the Mecanum wheels are assigned to the four corners of the chassis such that the subwheels form an "x".
