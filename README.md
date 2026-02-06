@@ -25,6 +25,14 @@ STL files are in the [`stl/`](stl/) directory. These are sourced from Thingivers
 | Raspberry Pi 4 LEGO Technic Enclosure | paulirotta | CC BY-NC-SA | [Thing:3713324](https://www.thingiverse.com/thing:3713324) |
 | Lego Wrapper for TT Motor | Nick507 | CC BY-SA | [Thing:5272973](https://www.thingiverse.com/thing:5272973) |
 
+<p>
+<a href="stl/files/pi_cam_technic_adaptor_v2.stl"><img src="stl/images/pi_cam_technic_adaptor_v2.png" alt="Camera to Lego Technic Adaptor" width="200"></a>
+<a href="stl/files/PELA-raspberry-pi4-technic-mount-base-PLA.stl"><img src="stl/images/PELA-raspberry-pi4-technic-mount.png" alt="Raspberry Pi 4 LEGO Technic Enclosure" width="200"></a>
+<a href="stl/files/TTMotorLegoTop.stl"><img src="stl/images/TTMotorLego2_v8.png" alt="Lego Wrapper for TT Motor" width="200"></a>
+</p>
+
+*Click any image to view the 3D model on GitHub.*
+
 ## Setup
 Build the robot. Ensure that the Mecanum wheels are assigned to the four corners of the chassis such that the subwheels form an "x".
 
@@ -33,7 +41,7 @@ Also ensure that the motors are wired 1-4 onto the motor control bonnet clockwis
 Clone this repo:
 
 ``` bash
-git clone git@github.com:jknoll/mechanum-robot.git
+git clone git@github.com:jknoll/mecanum-robot.git
 ```
 
 Create a virtualenv and activate it:

@@ -15,5 +15,5 @@
 
 ## Repo Rename
 
-- [ ] Rename the GitHub repository from `mechanum-robot` to `mecanum-robot` to fix the typo in the repo name
-  - Note: The git clone URL in README.md still references the old name and will need updating after the rename
+- [x] Rename the GitHub repository from `mechanum-robot` to `mecanum-robot` to fix the typo in the repo name
+  - Repo renamed, git remote URL and README clone command updated
